@@ -6,7 +6,7 @@
 *
 * Zafer Çelenk (zafercelenk@gmail.com)
 *******************************************************************************/
-import React from 'react';
+import React from 'react'
 
 const Deposit = () => {
   const depositInfo = {
