@@ -13,10 +13,10 @@ before_install:
 
 before_deploy:
   - eval "$(ssh-agent -s)"
-  - ssh_add ~/.ssh/travis_rsa
+  - ssh-add ~/.ssh/travis_rsa
 
 deploy:
-  - provider: script
-  - script: chmod +x deploy.sh && deploy.sh
-    on:
-      all_branches: true
+  provider: script
+  script: chmod +x deploy.sh && deploy.sh
+  on:
+    all_branches: true
