@@ -18,5 +18,5 @@ before_deploy:
 deploy:
   - provider: script
   - script: chmod +x deploy.sh && deploy.sh
-  on:
-    all_branches: true
+    on:
+      all_branches: true
