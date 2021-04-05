@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from './components/Header'
 import Deposit from './components/Deposit'
 import Footer from './components/Footer'
