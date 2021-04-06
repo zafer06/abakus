@@ -5,7 +5,8 @@
 *
 * Zafer Çelenk (zafercelenk@gmail.com)
 *******************************************************************************/
-import React from 'react';
+import React from 'react'
+import { version } from '../../package.json'
 
 const Footer = () => {
 	return (
@@ -15,6 +16,8 @@ const Footer = () => {
           ReactJS + Aşk ile geliştirildi.
           <br />
           Ankara 2021
+          <br />
+          Sürüm: { version }
 				</div>
 			</div>
 		</div>
