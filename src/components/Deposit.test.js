@@ -5,7 +5,7 @@ const actual = true
 
 test("it works", () => {
   expect(actual).toBe(expected)
-})
+});
 
 test("Basit faiz hesaplama", () => {
   let form = {
@@ -20,4 +20,4 @@ test("Basit faiz hesaplama", () => {
 
   expect(report.amount).toBe("100,00 TL")
   expect(report.tax).toBe("0,13 TL")
-})
+});
