@@ -1,4 +1,8 @@
 language: node_js
+dist: xenial
+
+os:
+  - linux
 
 node_js:
   - '15'
@@ -16,7 +20,7 @@ before_deploy:
   - ssh-add ~/.ssh/travis_rsa
 
 deploy:
-  skip_cleanup: true
+  cleanup: true
   provider: script
   script: chmod +x .travis/deploy.sh &&.travis/deploy.sh
   on:
