@@ -22,18 +22,17 @@ export function addDays(days) {
  * @returns {string}
  */
 export function formatNumber(number) {
-    // Create our number formatter.
-    let formatter = new Intl.NumberFormat('tr-TR', {
-        style: 'decimal',
-        currency: 'TRY',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-        // These options are needed to round to whole numbers if that's what you want.
-        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-    });
-  
-    return formatter.format(number);
+  if (isNaN(number)) return "0,00"
+
+  // Create our number formatter.
+  let formatter = new Intl.NumberFormat('tr-TR', {
+    maximumFractionDigits: 2,  
+    minimumFractionDigits: 2,
+    style: 'decimal',
+    currency: 'TRY'
+  });
+
+  return formatter.format(number.toFixed(2));
 }
 
 /**
@@ -44,11 +43,11 @@ export function formatNumber(number) {
  * @returns {string}
  */
 export function formatDate(date) {
-    let formatter = new Intl.DateTimeFormat('tr-TR', {
-        dateStyle: 'full',
-        timeStyle: 'short'
-    });
-    return formatter.format(date);
+  let formatter = new Intl.DateTimeFormat('tr-TR', {
+      dateStyle: 'full',
+      timeStyle: 'short'
+  });
+  return formatter.format(date);
 }
 
 /**
@@ -57,9 +56,20 @@ export function formatDate(date) {
  * 
  * @param {number} begin 
  * @param {number} end 
- * @returns number
+ * @returns {number}
  */
 export function diffDays(begin, end) {
     const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     return Math.round(Math.abs((begin - end) / oneDay));
+}
+
+/**
+ * Metin olarak alınan bilgiyi sayısal biçime uygun şekilde biçimlendirir ve 
+ * geri verir.
+ * 
+ * @param {string} strNumber 
+ * @returns {number}
+ */
+export function stringToNumber(strNumber) {
+  return Number(strNumber.replace(",", "."));
 }

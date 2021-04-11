@@ -8,9 +8,9 @@ body {
 }
 
 .infoPanel {
-	background-color: #f9f9f9;
-	border-radius: 4px;
-	padding-top: 25px;
+	background-color: #e8e8e8;
+	border-radius: 5px;
+	padding: 25px;
 }
 
 .infoPanel .title {

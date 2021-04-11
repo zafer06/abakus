@@ -1,23 +1,48 @@
 import { calculate } from "./Deposit"
+import { formatNumber } from "../utils"
 
-const expected = true
-const actual = true
+describe("Mevduat faizi hesaplama testleri", () => {
 
-test("it works", () => {
-  expect(actual).toBe(expected)
-});
+  test("Genel hesaplama testi", () => {
+    let form = {
+      amount: "1000",
+      ratio: "17",
+      expiry: "32",
+      taxRate: "5",
+      freeAmount: "0",
+    }
 
-test("Basit faiz hesaplama", () => {
-  let form = {
-    amount: "100",
-    ratio: "10",
-    expiry: "32",
-    taxRate: "15",
-    freeAmount: "0",
-  }
+    let report = calculate(form)
 
-  let report = calculate(form)
+    expect(formatNumber(report.netAmount)).toBe("14,16")
+  });
 
-  expect(report.amount).toBe("100,00 TL")
-  expect(report.tax).toBe("0,13 TL")
+  test("Tam sayılarla hesaplama testi", () => {
+    let form = {
+      amount: "1000",
+      ratio: "10",
+      expiry: "32",
+      taxRate: "15",
+      freeAmount: "0",
+    }
+
+    let report = calculate(form)
+
+    expect(formatNumber(report.netAmount)).toBe("7,45")
+  });
+
+  test("Virgüllü sayılarla hesaplama testi", () => {
+    let form = {
+      amount: "1000,95",
+      ratio: "10,25",
+      expiry: "32",
+      taxRate: "15",
+      freeAmount: "0",
+    }
+
+    let report = calculate(form)
+
+    expect(formatNumber(report.netAmount)).toBe("7,65")
+  });
+
 });

@@ -13,9 +13,7 @@ const Footer = () => {
     <div className="container mt-3">
       <div className="row">
         <div className="col-12 text-center">
-          ReactJS + Aşk ile geliştirildi.
-          <br />
-          Ankara 2021
+          Abaküs -- Finansal Hesap Makinesi, Ankara 2021
           <br />
           Sürüm: { version }
 				</div>
