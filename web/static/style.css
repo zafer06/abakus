@@ -1,0 +1,25 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+    background-color: #eee;
+}
+
+.navbar {
+	font-weight: 600;
+}
+.navbar-dark {
+    background-color: cornflowerblue!important;
+}
+
+.infoPanel {
+	background-color: #e8e8e8;
+	border-radius: 5px;
+	padding: 25px;
+}
+
+.infoPanel .title {
+	color: #939395;
+}
+
+.infoPanel .value {
+	color: #29292A;
+}
