@@ -1,14 +1,14 @@
 version: "3"
-  services:
-    web:
-      build: ./web
-      ports:
-        - "5500:5173"
+services:
+  web:
+    build: ./web
+    ports:
+      - "5500:5173"
 
-      #user: node
-      #working_dir: /home/web/app
-      #volumes:
-      #  - ./web:/app
-      #  expose:
-      #    - 5173
-      #  command: npm run dev
+    #user: node
+    #working_dir: /home/web/app
+    #volumes:
+    #  - ./web:/app
+    #  expose:
+    #    - 5173
+    #  command: npm run dev
